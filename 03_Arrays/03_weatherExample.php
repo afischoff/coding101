@@ -1,7 +1,8 @@
 <?php
 
 // go get the weather
-$url = "http://api.openweathermap.org/data/2.5/weather?zip=" . $_GET['zip'] . ",us&units=imperial";
+$appId = "0451a16299ae4810d6cd03f96390a7d0";
+$url = "http://api.openweathermap.org/data/2.5/weather?zip=" . $_GET['zip'] . ",us&units=imperial&APPID={$appId}";
 $weatherJSON = file_get_contents($url);
 $weatherData = json_decode($weatherJSON, true);
 
