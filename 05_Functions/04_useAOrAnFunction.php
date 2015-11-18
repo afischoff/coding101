@@ -1,6 +1,8 @@
 <?php
-// make a function which uses a or an before a word
-
+/**
+ * @param $word
+ * @return string
+ */
 function addAOrAn($word)
 {
 	$vowels = array('a', 'e', 'i', 'o', 'u');
@@ -14,5 +16,21 @@ function addAOrAn($word)
 
 	return $aOrAn . " " . $word;
 }
-
-echo "I would like " . addAOrAn("apple") . ". I would also like " . addAOrAn("banana") . ".";
+?>
+<html>
+<head>
+	<title>A or An Example</title>
+</head>
+<body>
+<h1>A or An Example</h1>
+<form method="post">
+	<p>What would you like? <input type="text" name="item"> <input type="submit" value="submit"> </p>
+</form>
+<hr>
+<?php
+if (!empty($_POST['item'])) {
+	echo "You would like " . addAOrAn($_POST['item']) . ".";
+}
+?>
+</body>
+</html>
